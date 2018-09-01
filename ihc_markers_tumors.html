@@ -21,6 +21,200 @@
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
 
+    <!-- Chart data and functions -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['sankey']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+          //molavi
+          [ 'angiosarcoma', 'CD31', 3 ],
+          [ 'angiosarcoma', 'CD68', 1 ],
+          [ 'solitary fibrous tumor', 'CD34', 3 ],
+          [ 'GIST', 'CD34', 3 ],
+          [ 'kaposi', 'CD34', 2 ],
+          [ 'epithelioid sarcoma', 'CD34', 2 ],
+          [ 'meningioma', 'EMA', 3 ],
+          [ 'perineuroma', 'EMA', 2 ],
+          [ 'chordoma', 'EMA', 2 ],
+          [ 'plasma cell myeloma', 'EMA', 2 ],
+          [ 'epithelioid sarcoma', 'EMA', 2 ],
+          [ 'synovial sarcoma', 'EMA', 2 ],
+          [ 'mesothelioma', 'EMA', 2 ],
+          [ 'GBM', 'GFAP', 3 ],
+          [ 'astrocytoma', 'GFAP', 3 ],
+          [ 'ependymoma', 'GFAP', 2 ], 
+          [ 'melanoma', 'S100', 3 ], 
+          [ 'schwannoma', 'S100', 3 ], 
+          [ 'MPNST', 'S100', 3 ], 
+          [ 'granular cell tumor', 'S100', 3 ], 
+          [ 'astrocytoma', 'S100', 3 ], 
+          [ 'GBM', 'S100', 3 ], 
+          [ 'chordoma', 'S100', 2 ],
+          [ 'ependymoma', 'S100', 2 ],
+          [ 'paraganglioma', 'synaptophysin', 3 ], 
+          [ 'pheochromocytoma', 'synaptophysin', 3 ], 
+          [ 'neuroblastoma', 'synaptophysin', 2 ],
+          [ 'carcinoid tumor', 'synaptophysin', 2 ], 
+          [ 'medullary carcinoma of thyroid', 'synaptophysin', 2 ],
+          [ 'small cell tumor', 'synaptophysin', 2 ],
+          [ 'pheochromocytoma', 'chromogranin', 3 ],
+          [ 'carcinoid tumor', 'chromogranin', 2 ],
+          [ 'small cell tumor', 'chromogranin', 2 ],
+          [ 'merkel cell tumor', 'chromogranin', 2 ],
+          [ 'adrenocortical carcinoma', 'inhibin', 2 ],
+          [ 'squamous cell carcinoma', 'CK5/6', 3 ],
+          [ 'mesothelioma', 'CK5/6', 2 ],
+          [ 'urothelial carcinoma', 'CK20', 2 ],
+          [ 'urothelial carcinoma', 'CK7', 2 ],
+          [ 'pancreatic carcinoma', 'CK20', 2 ],
+          [ 'pancreatic carcinoma', 'CK7', 2 ],
+          [ 'ovarian mucinous carcinoma', 'CK20', 2 ],
+          [ 'ovarian mucinous carcinoma', 'CK7', 2 ],
+          [ 'breast carcinoma', 'CK7', 2 ],
+          [ 'ovarian serous carcinoma', 'CK7', 2 ],
+          [ 'adenocarcinoma of lung', 'CK7', 2 ],
+          [ 'endometrial carcinoma', 'CK7', 2 ],
+          [ 'thymoma', 'CK7', 2 ],
+          [ 'colorectal carcinoma', 'CK20', 2 ],
+          [ 'merkel cell tumor', 'CK20', 2 ],
+          [ 'melanoma', 'HMB45', 3 ],
+          [ 'PEcoma', 'HMB45', 2 ],
+          [ 'angiomyolipoma', 'HMB45', 2 ],
+          [ 'melanoma', 'Melan-A', 3 ],
+          [ 'angiomyolipoma', 'Melan-A', 2 ],
+          [ 'leiomyoma', 'alpha-actin', 3 ],
+          [ 'leiomyosarcoma', 'alpha-actin', 3 ],
+          [ 'GIST', 'c-kit', 3 ],
+          [ 'seminoma', 'c-kit', 2 ],
+          [ 'teratoma', 'c-kit', 3 ],
+          [ 'PNET/Ewigs tumor', 'CD99', 3 ],
+          [ 'PNET/Ewigs tumor', 'FLI1', 3 ],
+          [ 'rhabdomyosarcoma', 'desmin', 3 ],
+          [ 'rhabdomyosarcoma', 'myogenin', 3 ],
+          [ 'malignant fibrous histiocytoma', 'FXIIIa', 2 ],
+          [ 'malignant fibrous histiocytoma', 'CD68', 2 ],
+          [ 'dermatofibroma', 'FXIIIa', 3 ],
+          [ 'giant cell tumor of tendon sheath', 'FXIIIa', 2 ],
+          [ 'Wilms tumor', 'WT-1', 3 ],
+          [ 'desmoplastic small round cell tumor', 'WT-1', 3 ],
+          [ 'medullary carcinoma of thyroid', 'calcitonin', 3 ],
+          [ 'follicular carcinoma of thyroid', 'thyroglobulin', 3 ],
+          [ 'medullary carcinoma of thyroid', 'TTF-1', 2 ],
+          [ 'follicular carcinoma of thyroid', 'TTF-1', 2 ],
+          [ 'adenocarcinoma of lung', 'TTF-1', 3 ],
+          [ 'yolk sac tumor', 'AFP', 3 ],
+          [ 'hepatocellular carcinoma', 'AFP', 2 ],
+          [ 'choriocarcinoma', 'beta-hCG', 3 ],
+          [ 'Hodgkins lymphoma', 'CD30', 3 ],
+          [ 'endocervical carcinoma', 'p16', 3 ],
+          [ 'serous carcinoma of endometrium', 'p53', 3 ],
+          [ 'ALCL', 'CD30', 2 ],
+          [ 'embrional carcinoma', 'CD30', 2 ],
+          [ 'ovarian serous carcinoma', 'CA-125', 3 ],
+          [ 'ALCL', 'CD30', 2 ],
+          [ 'large B/T cell lymphoma', 'CD30', 2 ],
+          [ 'ALCL', 'ALK', 2 ],
+          [ 'DLBCL', 'ALK', 2 ],
+          [ 'mantle cell lymphoma', 'bcl2', 2 ],
+          [ 'follicular lymphoma', 'bcl2', 2 ],
+          [ 'FCC lymphoma', 'bcl6', 2 ],
+          [ 'Burkitts lymphoma', 'bcl6', 2 ],
+          [ 'Hodgkins lymphoma', 'CD15', 3 ],
+          [ 'T-LBL', 'CD1a', 2 ],
+          [ 'LBL', 'CD10', 2 ],
+          [ 'FCC lymphoma', 'CD10', 2 ],
+          [ 'Burkitts lymphoma', 'CD10', 2 ],
+          [ 'SLL/CLL', 'CD23', 2 ],
+          [ 'CML', 'CD10', 2 ],
+          [ 'ALL', 'CD10', 2 ],
+          [ 'plasmacytoma', 'CD138', 3 ],
+          [ 'NK/T cell lymphoma', 'CD56', 2 ],
+          [ 'merkel cell tumor', 'CD56', 2 ],
+          [ 'neuroblastoma', 'CD56', 2 ],
+          [ 'Wilms tumor', 'CD56', 2 ],
+          [ 'ALL', 'CD34', 2 ],
+          [ 'ALL', 'TdT', 2 ],
+          [ 'LBL', 'TdT', 2 ],
+          [ 'AML', 'MPO', 2 ],
+          [ 'B-ALL', 'CD20', 2 ],
+          [ 'renal cell carcinoma', 'RCC', 2 ],
+          [ 'prostate carcinoma', 'PSA', 2 ],
+          [ 'prostate carcinoma', 'PSAP(PAP)', 2 ],
+          [ 'urothelial carcinoma', 'PSAP(PAP)', 2 ],
+          [ 'adenocarcinoma of lung', 'BerEP4', 2 ],
+          [ 'WT-1', 'nuclear', 2 ],
+          [ 'TTF-1', 'nuclear', 2 ],
+          [ 'CA-125', 'nuclear', 2 ],
+          [ 'p16', 'nuclear', 2 ],
+          [ 'p53', 'nuclear', 2 ],
+          [ 'FLI1', 'nuclear', 2 ],
+          [ 'TdT', 'nuclear', 2 ],
+          [ 'CD15', 'membranous', 2 ],
+          [ 'CD20', 'membranous', 2 ],
+          [ 'CD23', 'membranous', 2 ],
+          [ 'CD31', 'membranous', 2 ],
+          [ 'CD30', 'membranous', 2 ],
+          [ 'CD56', 'membranous', 2 ],
+          [ 'CD68', 'membranous', 2 ],
+          [ 'CD99', 'membranous', 2 ],
+          [ 'CD138', 'membranous', 2 ],
+          [ 'CD34', 'cytoplasmic and membranous', 2 ],
+          [ 'CD1a', 'membranous', 2 ],
+          [ 'CD10', 'membranous', 2 ],
+          [ 'BerEP4', 'membranous', 2 ],
+          [ 'bcl2', 'cytoplasmic and membranous', 2 ],
+          [ 'bcl6', 'cytoplasmic', 2 ],
+          [ 'AFP', 'cytoplasmic', 2 ],
+          [ 'beta-hCG', 'cytoplasmic', 2 ],
+          [ 'calcitonin', 'cytoplasmic', 2 ],
+          [ 'thyroglobulin', 'cytoplasmic', 2 ],
+          [ 'EMA', 'cytoplasmic', 2 ],
+          [ 'MPO', 'cytoplasmic', 2 ],
+          [ 'FXIIIa', 'cytoplasmic', 2 ],
+          [ 'GFAP', 'cytoplasmic', 2 ],
+          [ 'desmin', 'cytoplasmic', 2 ],
+          [ 'myogenin', 'cytoplasmic', 2 ],
+          [ 'ALK', 'nuclear and cytoplasmic', 2 ],
+          [ 'S100', 'nuclear and cytoplasmic', 2 ],
+          [ 'synaptophysin', 'cytoplasmic', 2 ],
+          [ 'chromogranin', 'cytoplasmic', 2 ],
+          [ 'inhibin', 'cytoplasmic', 2 ],
+          [ 'CK7', 'cytoplasmic', 2 ],
+          [ 'CK20', 'cytoplasmic', 2 ],
+          [ 'CK5/6', 'cytoplasmic', 2 ],
+          [ 'HMB45', 'cytoplasmic', 2 ],
+          [ 'Melan-A', 'cytoplasmic', 2 ],
+          [ 'RCC', 'cytoplasmic', 2 ],
+          [ 'PSA', 'cytoplasmic', 2 ],
+          [ 'PSAP(PAP)', 'cytoplasmic', 2 ],
+          [ 'c-kit', 'cytoplasmic and membranous', 2 ],
+          [ 'alpha-actin', 'cytoplasmic', 2 ],
+          [ 'nuclear', 'marker', 3 ],
+          [ 'cytoplasmic', 'marker', 3 ],
+          [ 'membranous', 'marker', 3 ],
+          [ 'cytoplasmic and membranous', 'marker', 3 ],
+          [ 'nuclear and cytoplasmic', 'marker', 3 ]
+          //end of molavi
+        ]);
+
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+        chart.draw(data, options);
+      }
+    </script>
+
   </head>
 
   <body>
@@ -73,42 +267,31 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+            <p>Immunohistochemistry is an essential tool that helps pathologists find the correct diagnosis of a specimen. It is based on antigen-antibody specificity binding and also <i>looks really cool</i>.</p>
 
-            <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+            <img class="img-fluid" src="img/ihc.jpg" alt="ihc positive cells">
+            <span class="caption text-muted">Proliferative endometrium. Picture from pathologyoutlines.com.</span>
 
-            <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+            <p>You can read more about it <a href="http://www.archivesofpathology.org/doi/pdf/10.1043/1543-2165%282007%29131%5B1561%3APOIMHD%5D2.0.CO%3B2" target="blanc">here</a> for example.</p>
 
-            <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+            <p>I was re-reading <a href="https://www.amazon.com/Practice-Surgical-Pathology-Beginners-Diagnostic/dp/1489989226" target="blanc">Molavi's excelent book</a> and thought "this would make a nice table". The nice table turned into some nice charts, that I wanted to share here.</p>
 
-            <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+            <p>The first one is a Sankey Diagram, created with <a href="https://developers.google.com/chart/interactive/docs/gallery/sankey" target="blanc">Google Charts</a>. It shows the relations between tumors, markers, and patterns. The weight is based on my subjective experience. Of course, it does not cover <i>all possibilities</i> but it gives a good overview, in my opinion.</p>
 
-            <h2 class="section-heading">The Final Frontier</h2>
+            <div id="sankey_multiple" style="width: 1200px; height: 1000px;"></div>
 
-            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+            <h2 class="section-heading">Try again</h2>
 
-            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+            <p>Then I wanted to create a <a href="https://beta.observablehq.com/@mbostock/d3-force-directed-graph" target="blanc">cool net graph</a>. But I have to admit D3.js is not my favorite data viz tool.</p>
 
-            <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+            <blockquote class="blockquote">If at first you don't succeed, dust yourself off, and try again. <br> (Aaliyah)</blockquote>
 
-            <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+            <p>Luckily, I discovered <a href="https://support.google.com/fusiontables/answer/2571232">Google's Fusion Tables</a> (let's hope they do not terminate the project).</p>
 
-            <h2 class="section-heading">Reaching for the Stars</h2>
+            <p>I hope you enjoy it! Do not hesitate to <a href="contact.html">contact me</a> if you have any suggestions or corrections.</p>
 
-            <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+            <div><iframe width="700" height="450" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;viz=GVIZ&amp;t=GRAPH&amp;gc=true&amp;gd=false&amp;sdb=1&amp;rmax=100000&amp;q=select+col0%2C+col1%2C+col2+from+1f7fHMGVLWBPJA7eCjJTkjg9qD0hHKmmzUjU7x35x&amp;qrs=+where+col0+%3E%3D+&amp;qre=+and+col0+%3C%3D+&amp;qe=&amp;uiversion=2&amp;state=%7B%22ps%22%3A%221_k_-8u_-4_13_2s_3_4_-e4_-9_9_-bn_-16_p_-17_14_j_-8b_1c_29_8o_-3a_2u_-ej_29_12_1f_-16_5_-eo_-19_v_-j_-8_32_-15_-1f_1j_-f4_-25_g_-7j_-1a_t_-5_20_22_14_23_1c_-8d_2f_1t_cy_-3i_18_22_1d_1m_bm_20_2y_-eh_12_11_2l_-17_q_-e_n_h_-7o_-f_28_9j_-3c_1p_8n_14_w_1_-15_1h_6t_3s_2e_7t_-3c_1x_-2e_-2u_f_-8f_-19_1f_-7l_1x_20_1c_30_10_-br_-35_1w_-1v_-27_24_a0_40_17_3x_7_2t_-fb_20_2p_-dv_2v_3a_3g_-2q_2i_71_-3g_0_bv_-1f_i_-84_-r_1s_cn_-2s_3c_32_-21_u_-1g_a_1e_-7n_2o_7_-cw_-q_r_-1h_-a_s_-y_d_2o_-dx_3l_14_27_-o_15_1u_-b_2n_-ei_36_2l_fc_-3x_33_-f8_1a_b_-aa_-o_e_-bp_-29_2a_cw_49_1l_-fn_-2l_1_bi_-z_1q_8m_i_1r_8o_1r_1i_66_3t_1u_cq_-44_1g_7f_3t_1y_-2t_-3c_1z_-d_2o_21_1i_3n_23_9f_3y_26_fh_-26_27_fs_-1q_z_-bt_-3s_1o_c2_2f_2b_cc_49_2c_e6_1n_2d_eg_16_2g_4m_a_1n_b7_1j_o_-1u_1m_n_-9a_n_m_-9b_-u_l_-9o_4_2q_a6_-3f_2z_fp_-6_30_fs_e_8_-by_-h_3_-ev_-4_2_cc_-26_1k_-ey_-2u_2x_-f4_2r_2j_6f_-3m_2k_ex_-4d_1v_dm_-3l_2m_fs_-3i_16_3f_-e_1b_1c_-1x_3d_2h_1y_1a_3e_m_2r_ct_f_2s_da_3_d_-bb_-i_c_-c8_-1m_2v_dr_32_2w_ec_34_2h_8p_-41_a_-b3_-1p_1d_-8n_33_19_2z_v_31_-z_-24_y_fn_3c_6_-dl_a_34_eb_4f_35_ew_4g_36_fz_1u_37_fl_2a_38_ed_-r_39_e9_-1b_2f_8o_-2k_3b_3s_-3b_25_an_44_x_fu_3w_%22%2C%22cx%22%3A27.5431629766678%2C%22cy%22%3A86.34958948648519%2C%22sw%22%3A1334.0251487351359%2C%22sh%22%3A514.6701962712715%2C%22z%22%3A0.9969967520149536%7D&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;att=true&amp;width=700&amp;height=450"></iframe></div>
 
-            <a href="#">
-              <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
-            </a>
-            <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-            <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-            <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-            <p>Placeholder text by
-              <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
-              <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
           </div>
         </div>
       </div>
@@ -123,7 +306,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://twitter.com/mrs_bighead" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -131,15 +314,15 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/camila-tomikawa/" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://github.com/mrsbighead" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -147,7 +330,8 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+            <p class="copyright text-muted">Copyright &copy; Camila's Digital Path 2018 - Powered by  <a href="https://startbootstrap.com/" target="_blank">startbootstrap.com</a></p>
+            <p class="copyright text-muted">Pictures by <a href="https://www.pexels.com/@little-visuals" target="_blank">littlevisuals.co</a></p>
           </div>
         </div>
       </div>
